@@ -1,0 +1,26 @@
+{
+  "name": "fund_sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon main/index.js && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanzhang123456/fund_sync.git"
+  },
+  "author": "Dylanz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanzhang123456/fund_sync/issues"
+  },
+  "homepage": "https://github.com/dylanzhang123456/fund_sync#readme",
+  "devDependencies": {
+    "cron": "^1.7.0",
+    "moment": "^2.24.0",
+    "node-xlsx": "^0.14.1",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.0"
+  }
+}
