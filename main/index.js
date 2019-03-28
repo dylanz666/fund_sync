@@ -19,4 +19,3 @@ new CronJob('0,20,40 * * * * 1,2,3,4,5', async function () {
     let fundData = await syncFundData(['001630', '001632', '001593', '501006', '002611']);
     //fundData.length > 0 ? await saveDataToXlsx('fundHistory', fundData) : null;
 }, null, true, 'Asia/Chongqing');
-
