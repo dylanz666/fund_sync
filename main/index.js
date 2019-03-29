@@ -10,6 +10,7 @@ const CronJob = require('cron').CronJob;
 const syncFundData = require('./syncFundData');
 const syncStokeMarketData = require('./syncStokeMarketData');
 const saveDataToXlsx = require('./saveDataToXlsx');
+const syncStokeData = require('./syncStokeData');
 
 //9,10,11,12,13,14,15
 new CronJob('0,20,40 * * * * 1,2,3,4,5', async function () {
@@ -18,4 +19,6 @@ new CronJob('0,20,40 * * * * 1,2,3,4,5', async function () {
 
     let fundData = await syncFundData(['501006', '001632', '001630', '001593', '002611']);
     //fundData.length > 0 ? await saveDataToXlsx('fundHistory', fundData) : null;
+
+    await syncStokeData('0008102');
 }, null, true, 'Asia/Chongqing');
