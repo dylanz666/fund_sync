@@ -7,7 +7,6 @@ const moment = require('moment');
 module.exports = async function (stokeId) {
     try {
         let url = `http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?rtntype=5&id=${stokeId}`;
-        console.log(url);
         let headers = {
             "Accept": "application/json, text/plain, */*",
             "Accept-Encoding": "gzip, deflate, br",
@@ -27,7 +26,7 @@ module.exports = async function (stokeId) {
             let newestPrice = data[data.length - 1].split(",")[1];
             let yesterdayPrice = jsonBody.info.yc;
             let rate = (((newestPrice - yesterdayPrice) / yesterdayPrice) * 100).toFixed(2);
-            console.log(stokeId, name, newestPrice, rate, rate > 0 ? " 涨了 " : " 跌了 ", "持仓总价值:" + newestPrice * 400, newestPrice * 400 > 5000 ? " 可以卖了。。" : "还不能卖哦。。。");
+            console.log(stokeId, name, newestPrice, rate, rate > 0 ? " 涨了 " : " 跌了 ", "持仓总价值:" + newestPrice * 400, newestPrice * 400 - 4724 > 15 ? " 可以卖了。。" : "还不能卖哦。。。");
             return true;
         }
         return false;
